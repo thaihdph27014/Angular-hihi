@@ -1,0 +1,51 @@
+<section id="home-section">
+  <div class="container  mx-auto">
+    <div class="row">
+      <div class="col-12">
+        <form (submit)="searchProducts()">
+          <div class="flex justify-center">
+            <input type="text" id="search-navbar"
+              class="block w-[550px] p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-l-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search..." [(ngModel)]="searchKeyword" name="searchKeyword">
+            <button type="submit" class="bg-cyan-300 py-[6.9px] px-4 rounded-r-lg">Search</button>
+          
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="grid mx-44  grid-cols-4 justify-items-center ">
+        <div *ngFor="let product of filteredProducts" class=" my-3 " style="width: 18rem">
+          <div class=" border ">
+            <img src="{{ product.imgURL }}" alt="" class=" object-center	" />
+         
+            <div class="">
+              <a [routerLink]="['/product/', product.id]" > <p class="font-sans text-sm font-semibold text-gray-800 mt-3">{{ product.name }}</p> </a>
+              <p class="card-text font-light text-xs">Price: {{ product.price }}</p>
+
+              <!-- pipes -->
+
+              <!-- <button class="" (click)="onClick()">Xem thêm</button>
+                  <p>{{description}}</p> -->
+              <div class=" flex flex-col items-center ">
+                <button type="button" class=" hover:border mt-3 text-white bg-black hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  <svg aria-hidden="true" class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                  Buy now
+                </button>
+
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="filteredProducts.length === 0">
+        <div class="col-12">
+          <p>No products found.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
