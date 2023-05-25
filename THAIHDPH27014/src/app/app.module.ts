@@ -19,6 +19,8 @@ import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import {MatIconModule} from '@angular/material/icon'
+
 
 
 @NgModule({
@@ -43,7 +45,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,  FormsModule, BrowserAnimationsModule,
+    AppRoutingModule,  FormsModule, BrowserAnimationsModule,MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

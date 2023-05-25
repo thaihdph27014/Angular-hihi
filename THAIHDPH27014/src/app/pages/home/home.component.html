@@ -1,5 +1,9 @@
+
 <section id="home-section">
   <div class="container  mx-auto">
+    <div class="banner ">
+        <img src="https://r4.wallpaperflare.com/wallpaper/43/712/919/adidas-logo-paint-splatter-wallpaper-19f0d80d219a5d7b7697381f40a1267d.jpg" class=" w-full h-[570px]" alt="">
+    </div>
     <div class="row">
       <div class="col-12">
         <form (submit)="searchProducts()">
@@ -14,7 +18,9 @@
       </div>
     </div>
     <div class="row">
+ 
       <div class="grid mx-44  grid-cols-4 justify-items-center ">
+      
         <div *ngFor="let product of filteredProducts" class=" my-3 " style="width: 18rem">
           <div class=" border ">
             <img src="{{ product.imgURL }}" alt="" class=" object-center	" />
@@ -46,6 +52,39 @@
           <p>No products found.</p>
         </div>
       </div>
+    </div>
+
+    <div class="w-full flex mx-auto bg-yellow-50 justify-center gap-[60px] mt-10 pt-[50px]">
+      <div class="content">
+          <p class="text-4xl font-semibold">Stories, style, <br> and sporting  goods at <br> adidas, since 1949</p>
+          <p>Through sports, we have the power to change lives. Sports keep us fit. They keep <br> us mindful. They bring us together. Athletes inspire us. They help us to get up and
+          <br>get moving. And sporting goods featuring the latest technologies help us beat our <br>personal best. adidas is home to the runner, the basketball player, the soccer kid,
+          <br>the fitness enthusiast, the yogi. And even the weekend hiker looking to escape the <br> city. The 3-Stripes are everywhere and anywhere. In sports. In music. On life’s
+          <br> stages. Before the whistle blows, during the race, and at the finish line. We’re here <br> to support creators. To improve their game. To live their lives. And to change the
+          <br>world <br>
+          <br>get moving. And sporting goods featuring the latest technologies help us beat our <br>personal best. adidas is home to the runner, the basketball player, the soccer kid,
+          <br>the fitness enthusiast, the yogi. And even the weekend hiker looking to escape the <br> city. The 3-Stripes are everywhere and anywhere. In sports. In music. On life’s
+          <br> stages. Before the whistle blows, during the race, and at the finish line. We’re here <br> to support creators. To improve their game. To live their lives. And to change th
+          
+          </p>
+      </div>
+      <div class="content">
+        <p class="text-4xl font-semibold">Workout clothes, for  <br>any sport <br><br>
+        <p>adidas designs for athletes of all kinds. Creators who love to change the game. <br> People who challenge conventions, break the rules, and define new ones. Then
+        <br>break them all over again. We design sports apparel that gets you moving, <br>winning, and living life to the fullest. We create bras and tights for female athletes
+        <br>who play just as hard as the men. From low to high support. Maximum comfort. We<br> design, innovate and iterate. We test new technologies in action. On the field, the
+        <br> stages. Before the whistle blows, during the race, and at the finish line. We’re here <br> to support creators. To improve their game. To live their lives. And to change the
+        <br>world
+        </p>
+    </div>
+
+
+     
+    </div>
+    
+    <div class="w-full flex h-[120px] gap-6  bg-yellow-300 text-center items-center justify-center align-middle">
+      <p class="text-4xl font-semibold pt-[15px]">JOIN OUR ADICLUB & GET 15% OFF</p>
+      <button class="w-[350px] h-[55px] bg-black text-white text-lg"  routerLink="/register"> SIGN UP FOR FREE  </button>
     </div>
   </div>
 </section>
