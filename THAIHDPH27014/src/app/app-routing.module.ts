@@ -8,6 +8,7 @@ import { LayoutClientComponent } from './components/layouts/layout-client/layout
 import { LoginComponent } from './pages/login/login.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { ProductComponent } from './pages/admin/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 const routes: Routes = [
   {
@@ -34,7 +35,7 @@ const routes: Routes = [
     component: LayoutAdminComponent,
     children: [
       {
-        path: '',
+        path: 'admin',
         redirectTo: 'dashboard',
         pathMatch: 'full',
       },
@@ -46,7 +47,7 @@ const routes: Routes = [
 
       {
         path: 'products',
-        component: ProductsComponent,
+        component: ProductComponent,
       },
     ],
   },
