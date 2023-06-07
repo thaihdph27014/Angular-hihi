@@ -22,6 +22,7 @@ import { AdminProductComponent } from './pages/admin/admin-product/admin-product
 import { CreateComponent } from './pages/admin/create/create.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { EditComponent } from './pages/admin/edit/edit.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     NotFoundComponent,
     AdminProductComponent,
     CreateComponent,
+    EditComponent,
   
 
   ],
