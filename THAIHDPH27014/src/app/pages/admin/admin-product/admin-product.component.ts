@@ -15,10 +15,15 @@ export class AdminProductComponent implements OnInit {
   products!: IProduct[] 
  ngOnInit(): void {
    this.productService.getAllProduct().subscribe(data => {
-    console.log(data);
     
     this.products = data
     
    })
+ }
+
+ deleteProduct(id: string | number) {
+  this.productService.deleteProduct(id).subscribe(() => {
+    this.products = this.products.filter(product => product._id !== id)
+  })
  }
 }
