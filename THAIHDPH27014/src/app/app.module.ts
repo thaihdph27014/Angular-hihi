@@ -10,17 +10,16 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { QuenpasswordComponent } from './pages/quenpassword/quenpassword.component';
 import { ProductsComponent } from './pages/products/products.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+
 import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
-import { LayoutAdminComponent } from './components/layouts/layout-admin/layout-admin.component';
-import { LayoutClientComponent } from './components/layouts/layout-client/layout-client.component';
+import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
+import { LayoutClientComponent } from './layouts/layout-client/layout-client.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import {MatIconModule} from '@angular/material/icon'
-
+import {MatIconModule} from '@angular/material/icon';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -32,8 +31,7 @@ import {MatIconModule} from '@angular/material/icon'
     RegisterComponent,
     LoginComponent,
     QuenpasswordComponent,
-    HeaderComponent,
-    FooterComponent,
+  
     HeaderAdminComponent,
     LayoutAdminComponent,
     LayoutClientComponent,
@@ -45,7 +43,7 @@ import {MatIconModule} from '@angular/material/icon'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,  FormsModule, BrowserAnimationsModule,MatIconModule
+    AppRoutingModule,  FormsModule, BrowserAnimationsModule,MatIconModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
