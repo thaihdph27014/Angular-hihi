@@ -1,0 +1,33 @@
+<p>create works!</p>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="formProduct">
+    <div>
+        <label for="">name</label>
+        <input type="text" formControlName="name">
+        <p
+      class="text-red-500"
+      *ngIf="formProduct.get('name')?.errors?.['required']"
+    >
+      Vui long nhap truong nay
+    </p>
+    </div>
+    <div>
+        <label for="">categoryId</label>
+        <input type="text" formControlName="categoryId">
+    </div>
+    <div>
+        <label for="">image</label>
+        <input type="text" formControlName="image">
+    </div>
+    <div>
+        <label for="">price</label>
+        <input type="number" formControlName="price">
+    </div>
+    <div>
+        <label for="">desc</label>
+        <input type="text" formControlName="desc">
+    </div>
+    <button class="cursor-pointer" type="submit" [disabled]="!formProduct.valid">
+        add
+    </button>
+</form>

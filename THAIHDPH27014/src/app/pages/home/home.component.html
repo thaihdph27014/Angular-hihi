@@ -99,12 +99,12 @@
  
       <div class="grid mx-44  grid-cols-4 justify-items-center ">
       
-        <div *ngFor="let product of filteredProducts" class=" my-3 " style="width: 18rem">
+        <div *ngFor="let product of products" class=" my-3 " style="width: 18rem">
           <div class=" border ">
-            <img src="{{ product.imgURL }}" alt="" class=" object-center	" />
+            <img src="{{ product.image }}" alt="" class=" object-center	" />
          
             <div class="">
-              <a [routerLink]="['/product/', product.id]" > <p class="font-sans text-sm font-semibold text-gray-800 mt-3">{{ product.name }}</p> </a>
+              <a [routerLink]="['/product/', product._id]" > <p class="font-sans text-sm font-semibold text-gray-800 mt-3">{{ product.name }}</p> </a>
               <p class="card-text font-light text-xs">Price: {{ product.price }}</p>
 
               <!-- pipes -->
@@ -125,7 +125,7 @@
           </div>
         </div>
       </div>
-      <div class="row" *ngIf="filteredProducts.length === 0">
+      <div class="row" *ngIf="products.length === 0">
         <div class="col-12">
           <p>No products found.</p>
         </div>

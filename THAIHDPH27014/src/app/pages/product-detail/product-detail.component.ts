@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ProductService } from 'src/app/common/product.service';
 import { IProduct } from 'src/app/common/product';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -19,18 +19,11 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-      const productId = params.get('id');
-      const products = this.productService.getProducts();
-      const product = products.find(
-        (product) => product.id === (productId ? parseInt(productId) : null)
-      );
-
-      if (product) {
-        this.product = product;
-      } else {
-        // Xử lý trường hợp không tìm thấy sản phẩm
-        console.log('Không tìm thấy sản phẩm');
-      }
+      const productId = String(params.get('id'));
+      const products = this.productService.getOneProduct(productId).subscribe(data => {
+        this.product = data
+      })
+      
     });
   }
 }

@@ -6,8 +6,8 @@
   <div class="grid mx-44  grid-cols-4 justify-items-center ">
           <div *ngFor="let product of products  " class=" my-3 " style="width: 18rem">
             <div class=" border ">     
-              <img src="{{ product.imgURL }}" alt=""  class=" object-center	" />
-              <a [routerLink]="['/product/', product.id]" class="btn btn-primary">Chi tiết</a>
+              <img src="{{ product.image }}" alt=""  class=" object-center	" />
+              <a [routerLink]="['/product/', product._id]" class="btn btn-primary">Chi tiết</a>
               <div class="">
                 <h5 class="font-sans text-sm font-semibold text-gray-800 mt-3">{{ product.name }}</h5>
                 <p class="card-text font-light ">Price: {{ product.price }}</p>
