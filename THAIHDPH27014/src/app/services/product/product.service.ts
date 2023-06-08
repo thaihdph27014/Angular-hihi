@@ -14,10 +14,16 @@ constructor(private htpp: HttpClient) { }
  getAllProduct(): Observable<any[]> {
   return this.htpp.get<any[]>(this.API)
  }
- getOneProduct(id: string | number): Observable<IProduct> {
-  return this.htpp.get<IProduct>(`${this.API}/${id}`)
+ getOneProduct(id: string | number): Observable<any> {
+  return this.htpp.get<any>(`${this.API}/${id}`)
  }
  addProduct(product: any): Observable<IProduct> {
   return this.htpp.post<IProduct>(`${this.API}`, product)
+ }
+ updateProduct(product: any, id: string | number): Observable<IProduct> {
+  return this.htpp.put<IProduct>(`${this.API}/${id}`, product)
+ }
+ deleteProduct(id: string | number): Observable<IProduct> {
+  return this.htpp.delete<IProduct>(`${this.API}/${id}`)
  }
 }
