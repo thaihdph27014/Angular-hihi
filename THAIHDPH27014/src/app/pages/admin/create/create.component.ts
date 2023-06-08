@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CategoryService } from 'src/app/services/categories/category.service';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
@@ -8,7 +9,15 @@ import { ProductService } from 'src/app/services/product/product.service';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss']
 })
-export class CreateComponent {  constructor(private formBuilder: FormBuilder, private productService: ProductService, private router: Router) {}
+export class CreateComponent { 
+  categories!: any[]
+  constructor(private formBuilder: FormBuilder, private productService: ProductService, private router: Router, private categoryService: CategoryService) {
+    this.categoryService.getAllCategory().subscribe(data => {
+      this.categories = data;
+      console.log(this.categories);
+      
+    })
+  }
 
 formProduct = this.formBuilder.group({
   name: ['', [Validators.required, Validators.minLength(6)]],
